@@ -1,0 +1,26 @@
+{
+  "name": "node-web-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollisd09/node-web-server.git"
+  },
+  "keywords": [],
+  "author": "Danielle Hollis <hollisd09@gmail.com> (http://www.hollisdesignsstudio.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hollisd09/node-web-server/issues"
+  },
+  "homepage": "https://github.com/hollisd09/node-web-server#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "node-cal": "github:nss-cohort-11/node-cal"
+  }
+}
