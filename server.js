@@ -1,10 +1,33 @@
 'use strict';
 
 const app = require('express')();
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
-app.get('/hello', (req, res) => {
+app.set('view engine', 'jade');
 
+app.locals.title = 'The Super Cool App';
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+//routes
+app.get('/', (req, res) => {
+  res.render('index', {
+    date: new Date()
+  });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact')
+});
+
+app.post('/contact', (req, res) => {
+  console.log('req.body ======', req.body)
+  const name = req.body.name;
+  res.send(`<h1>Thanks for contacting us, ${name}!</h1>`);
+});
+
+app.get('/hello', (req, res) => {
   const name = req.query.name;
   const msg = `<h1>Hello ${name}!</h1><h2>Goodbye ${name}!</h2>`;
 
